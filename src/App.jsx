@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Users, DollarSign, TrendingUp, Database, Server, Megaphone, UserCog, AlertCircle, ChevronDown, ChevronUp, ChevronsUpDown, FileCode } from 'lucide-react';
 // ZMĚNA: Importujeme lokální obrázek diagramu
 import dwhDiagram from './assets/DWH.png';
+// ZMĚNA: Importujeme nový Data Vault diagram
+import dataVaultDiagram from './assets/DataVault.jpg'; // Ujistěte se, že jste soubor image_72d5dc.jpg přejmenovali a přesunuli sem
 
 const MagicalMoneyDashboard = () => {
   const [expandedDepts, setExpandedDepts] = useState([]);
-  const [currentPage, setCurrentPage] = useState('org'); // 'org', 'dwh', nebo 'inmon'
+  const [currentPage, setCurrentPage] = useState('org'); // 'org', 'dwh', 'inmon', nebo 'vault'
 
   const departments = [
     {
@@ -375,6 +377,23 @@ Order_Detail "1" -- "1..*" Invoice : so_line_id
       </div>
     );
   };
+
+  // ZMĚNA: Nová komponenta pro Data Vault Model
+  const DataVaultModelPage = () => {
+    return (
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Datový Model (Data Vault)</h1>
+          <p className="text-gray-600">Architektura datového skladu (model)</p>
+        </div>
+
+        {/* Protože je diagram velmi široký, přidáme overflow-x-auto, aby bylo možné horizontálně rolovat */}
+        <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md border overflow-x-auto">
+          <img src={dataVaultDiagram} alt="Data Vault Model DWH Diagram" className="max-w-none h-auto" />
+        </div>
+      </div>
+    );
+  };
   
   const PageRenderer = () => {
     switch (currentPage) {
@@ -384,6 +403,9 @@ Order_Detail "1" -- "1..*" Invoice : so_line_id
         return <DWHArchitecturePage />;
       case 'inmon':
         return <InmonModelPage />;
+      // ZMĚNA: Přidán case pro Data Vault
+      case 'vault':
+        return <DataVaultModelPage />;
       default:
         return <OrgStructurePage />;
     }
@@ -410,6 +432,13 @@ Order_Detail "1" -- "1..*" Invoice : so_line_id
             className={`px-6 py-3 rounded-lg font-semibold transition-all ${currentPage === 'inmon' ? 'bg-slate-700 text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-gray-100 shadow'}`}
           >
             🧬 Datový model (Inmon)
+          </button>
+          {/* ZMĚNA: Přidáno tlačítko pro Data Vault */}
+          <button
+            onClick={() => setCurrentPage('vault')}
+            className={`px-6 py-3 rounded-lg font-semibold transition-all ${currentPage === 'vault' ? 'bg-slate-700 text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-gray-100 shadow'}`}
+          >
+            🔐 Datový model (Data Vault)
           </button>
         </div>
       </div>
