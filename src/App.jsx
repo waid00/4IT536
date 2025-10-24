@@ -24,7 +24,7 @@ const MagicalMoneyDashboard = () => {
       icon: <TrendingUp className="w-5 h-5" />,
       color: 'bg-green-100 border-green-300',
       textColor: 'text-green-800',
-      applications: ['CRM', 'Zákaznický portál'],
+      applications: ['CRM', 'Zákaznický portál', 'Rezervační systém'], // <-- ZMĚNA ZDE
       dataObjects: ['Osoba (prospekt / zákazník)', 'Kontakt', 'Obchodní případy'],
       capabilities: ['Osobní kontakt se zákazníky', 'Akvizice nových klientů']
     },
@@ -101,8 +101,8 @@ const MagicalMoneyDashboard = () => {
   ];
 
   const ccoStructure = [0, 1, 2];
-  const chroStructure = [3, 4];
-  const cfoStructure = [5, 6];
+  const chroStructure = [4]; // <-- ZMĚNA ZDE (odebráno 3)
+  const cfoStructure = [5, 6, 3]; // <-- ZMĚNA ZDE (přidáno 3)
   const cioStructure = [7, 8];
 
   const DepartmentCard = ({ dept, index }) => {
@@ -240,8 +240,8 @@ const MagicalMoneyDashboard = () => {
           <h3 className="font-bold text-lg mb-4 text-gray-800">Struktura řízení a datová architektura</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
             <div><span className="font-semibold">CCO</span> - Obchodní oddělení (Schvalování, Sales, Marketing)</div>
-            <div><span className="font-semibold">CHRO</span> - Lidské zdroje a zákaznická péče</div>
-            <div><span className="font-semibold">CFO</span> - Finance a rizika (Payments, Credit Risk)</div>
+            <div><span className="font-semibold">CHRO</span> - Lidské zdroje</div> 
+            <div><span className="font-semibold">CFO</span> - Finance, rizika a zákaznická péče (Payments, Credit Risk, Customer Care)</div> 
             <div><span className="font-semibold">CIO</span> - Informační technologie a data</div>
           </div>
           <div className="mt-4 pt-4 border-t border-gray-200">
