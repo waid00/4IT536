@@ -433,7 +433,7 @@ Order_Detail "1" -- "1..*" Invoice : so_line_id
             onClick={() => setCurrentPage('inmon')}
             className={`px-6 py-3 rounded-lg font-semibold transition-all ${currentPage === 'inmon' ? 'bg-slate-700 text-white shadow-lg' : 'bg-white text-gray-700 hover:bg-gray-100 shadow'}`}
           >
-            🧬 Datový model (Inmon)
+            🧬 Datový model
           </button>
           {/* ZMĚNA: Přidáno tlačítko pro Data Vault */}
           <button
