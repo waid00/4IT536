@@ -368,7 +368,7 @@ Order_Detail "1" -- "1..*" Invoice : so_line_id
     return (
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Datový Model (Inmon)</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Datový Model</h1>
           <p className="text-gray-600">Core vrstva datového skladu</p>
         </div>
 
