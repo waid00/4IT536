@@ -274,6 +274,8 @@ const MagicalMoneyDashboard = () => {
             <div className="bg-white p-2 rounded border border-blue-200 text-gray-800">Credit Scoring</div>
             <div className="bg-white p-2 rounded border border-blue-200 text-gray-800">Email/Komunikace</div>
             <div className="bg-white p-2 rounded border border-blue-200 text-gray-800">Reportovací Nástroje</div>
+            {/* ZMĚNA: Přidány externí zdroje */}
+            <div className="bg-white p-2 rounded border border-blue-200 text-gray-800">Externí zdroje</div>
           </div>
         </div>
         <div className="flex justify-center"><div className="text-center"><div className="text-2xl text-gray-400">↓</div><div className="text-xs text-gray-600 font-semibold">Streaming & ETL/ELT</div></div></div>
